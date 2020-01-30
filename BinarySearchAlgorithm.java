@@ -47,5 +47,7 @@ public class BinarySearchAlgorithm {
 		{
 			System.out.println("element "+target+" is not in the array");
 		}
+		
 	}
+
 }
