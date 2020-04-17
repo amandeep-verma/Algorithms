@@ -6,6 +6,11 @@
  * Stable -> Preserves the relative order of the element
  * Not an In-place algorithm -> the extra space taken to store indices and other stuff is dependent on size of input array 
  * 
+ * 
+ * The idea here is to find a mid point in the array and break it down in left and left side array along the mid point. Then you take the left side 
+ * array and find again mid point of it and break it down along the mid point. This will happen recursively. It will continue to happen until you array
+ * size is less than 2. With this happening is the array we will have base left array and right array with one element and they will be combined with 
+ * sorting. Now this chain will go up and combine the 2 sorted arrays to the final array.
  */
 
 public class MergeSort
@@ -20,11 +25,11 @@ public class MergeSort
 		}
 	}
 	
-	private static void MSort(int[] sample) {
+	private static int[] MSort(int[] sample) {
 		// TODO Auto-generated method stub
 		if(sample.length<2)
 		{
-			return;
+			return sample;
 		}
 		int mid=sample.length/2;
 		int[] lside=new int[mid];
@@ -59,7 +64,7 @@ public class MergeSort
 			System.out.printf("%d, ", sample[e]);
 		}
 		
-		return;
+		return sample;
 	}
 	
 	private static void Merge(int[] sample1, int[] sample2,int[] sample) {
